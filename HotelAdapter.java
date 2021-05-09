@@ -13,29 +13,29 @@ import java.util.Random;
  */
 public class HotelAdapter implements HotelTarget{
     
-	Hotel theRobot;
+	Hotel theHotel;
 
 	public HotelAdapter(Hotel newRobot){
 		
-		theRobot = newRobot;
+		theHotel = newRobot;
 		
 	}
 	
 	public void hotelPlace() {
 		
-		theRobot.place();
+		theHotel.place();
 		
 	}
 
 	public void availableRooms() {
 		
-		theRobot.roomleft();
+		theHotel.roomleft();
 		
 	}
 
 	public void bookroom(String customerName) {
 		
-		theRobot.bookName(customerName);
+		theHotel.bookName(customerName);
 		
 	}
 		

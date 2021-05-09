@@ -33,7 +33,7 @@ public class HotelService {
 		
 		System.out.println("The Hotel with Adapter");
 		
-		robotAdapter.bookroom("Mark");
+		robotAdapter.bookroom("Paul");
 		robotAdapter.availableRooms();
 		robotAdapter.hotelPlace();
 
