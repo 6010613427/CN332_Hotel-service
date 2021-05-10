@@ -54,6 +54,65 @@ public class HotelService {
         eachhotel.place(nameHotel);
         System.out.println();
 
+        Scanner sc = new Scanner(System.in);
+
+        int i = 0;
+        String choice = null;
+        System.out.println("Want some food?");
+        while (i == 0) {
+            System.out.print("[Y/N] : ");
+            String schoice = sc.nextLine();
+            if ("Y".equals(schoice) || "N".equals(schoice)) {
+                choice = schoice;
+                i = 1;
+            } else {
+                System.out.println("Please try again.");
+            }
+        }
+
+        if ("Y".equals(choice)) {
+
+            i = 0;
+
+            HotelKeeper keeper = new HotelKeeper();
+
+            System.out.println("Welcome to the restaurant please select your restaurant type");
+            System.out.println("=> N = NonVegRestaurant V = VegRestaurant B = BothRestaurant");
+            while (i == 0) {
+                System.out.print("Enter Restaurant : ");
+                String s = sc.nextLine();
+                if ("N".equals(s) || "V".equals(s) || "B".equals(s)) {
+                    choice = s;
+                    i = 1;
+                } else {
+                    System.out.println("Please try again.");
+                }
+            }
+
+            int l;
+
+            switch (choice) {
+                case "N":
+                    keeper.getNonVegMenu();
+                    System.out.print("Select your food from number : ");
+                    l = sc.nextInt();
+                    keeper.getNonVegFood(l, nameHotel);
+                    break;
+                case "V":
+                    keeper.getVegMenu();
+                    System.out.print("Select your food from number : ");
+                    l = sc.nextInt();
+                    keeper.getVegFood(l, nameHotel);
+                    break;
+                case "B":
+                    keeper.getBothMenu();
+                    System.out.print("Select your food from number : ");
+                    l = sc.nextInt();
+                    keeper.getBothFood(l, nameHotel);
+                    break;
+            }
+        }
+
         /*System.out.println("The Hotel Service");
 		
 		bookhotel.bookroom("Paul");

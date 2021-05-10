@@ -17,6 +17,6 @@ public class NonVegRestaurant implements HotelMenu {
     public void getFood(int num, String country) {
         Balance b = new Balance();
         String price = b.textBalance(num, country);
-        System.out.println("Your menu is " + food[num] + price);
+        System.out.println("Your menu is " + food[num] + " " + price);
     }
 }

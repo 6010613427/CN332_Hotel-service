@@ -15,23 +15,23 @@ private String result;
     public String balanceAmount(double balance, String country) {       
 
         switch (country) {
-            case "HK":
+            case "Hongkong":
                 HKTax h = new HKTax();
                 result = h.getHKTax(balance);
                 break;
-            case "CA":
+            case "Canada":
                 CATax ca = new CATax();
                 result = ca.getCATax(balance);
                 break;
-            case "JP":
+            case "Japan Hotel":
                 JPTax j = new JPTax();
                 result = j.getJPTax(balance);
                 break;
-            case "CN":
+            case "China":
                 CNTax cn = new CNTax();
                 result = cn.getCNTax(balance);
                 break;
-            case "BL":
+            case "Bali":
                 BLTax b = new BLTax();
                 result = b.getBLTax(balance);
                 break;
