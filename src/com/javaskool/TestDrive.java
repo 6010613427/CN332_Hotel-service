@@ -11,16 +11,16 @@ public class TestDrive {
 		facade.displayAvailableRooms();
 		
 		//Automatically from facade
-		System.out.println(facade.reserve(RoomType.DOUBLE));
+		//System.out.println(facade.reserve(RoomType.DOUBLE));
 
 		//For Customer Choice
-		/*Scanner sc=new Scanner(System.in);
+		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter Room No :");
 		int i=sc.nextInt();
-		System.out.println(facade.reserve(RoomType.SINGLE,i));*/
+		System.out.println(facade.reserve(RoomType.SINGLE,i));
 		
 		//System.out.println(facade.reserve(RoomType.DOUBLE));
-		System.out.println(facade.reserve(RoomType.SINGLE));		
+		//System.out.println(facade.reserve(RoomType.SINGLE));		
 		facade.displayAvailableRooms();		
 	}
 }

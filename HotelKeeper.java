@@ -11,9 +11,24 @@ public class HotelKeeper {
         nv.getMenu();
     }
 
-    public void getVegNonMenu() {
+    public void getBothMenu() {
         BothRestaurant b = new BothRestaurant();
         b.getMenu();
+    }
+    
+    public void getVegFood(int num, String country) {
+        VegRestaurant v = new VegRestaurant();
+        v.getFood(num, country);
+    }
+
+    public void getNonVegFood(int num, String country) {
+        NonVegRestaurant nv = new NonVegRestaurant();
+        nv.getFood(num, country);
+    }
+
+    public void getBothFood(int num, String country) {
+        BothRestaurant b = new BothRestaurant();
+        b.getFood(num, country);
     }
     
 }

@@ -40,8 +40,10 @@ private String result;
         return result;
     }
     
-    public void getCalcTax() {
-        System.out.println(result);
+    public String getCalcTax() {
+        
+        return result;
+        
     }
 
 }
