@@ -16,7 +16,7 @@ public class NonVegRestaurant implements HotelMenu {
     @Override
     public void getFood(int num, String country) {
         Balance b = new Balance();
-        String price = b.textBalance(num, country);
-        System.out.println("Your menu is " + food[num] + " " + price);
+        String p = b.textBalance(num, country);
+        System.out.println("Your menu is " + food[num] + " " + p);
     }
 }
