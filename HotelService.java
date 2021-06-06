@@ -25,9 +25,9 @@ public class HotelService {
 //        System.out.print("Which\'s hotel do you want to booking: ");
 //        char country = reader.next().charAt(0);
         String numCountry = country;
-        
+
         StateHotel h = new StateHotel();
-        
+
         String nameHotel = h.StateNameHotel(numCountry);
         /*switch (numCountry) {
             case "1":
@@ -63,34 +63,34 @@ public class HotelService {
         eachhotel.bookName(cname);
         eachhotel.roomleft();
         eachhotel.place(nameHotel);
-        
+
         System.out.println();
-        HotelFacade facade=new HotelFacade();
-		facade.displayAvailableRooms();
-		
-		//Automatically from facade
-		//System.out.println(facade.reserve(RoomType.DOUBLE));
+        HotelFacade facade = new HotelFacade();
+        facade.displayAvailableRooms();
 
-		//For Customer Choice
-		Scanner room=new Scanner(System.in);
-		System.out.print("Enter Room No : ");
-		int numroom=room.nextInt();
-		System.out.println(facade.reserve(RoomType.SINGLE,numroom));
-		
-		//System.out.println(facade.reserve(RoomType.DOUBLE));
-		//System.out.println(facade.reserve(RoomType.SINGLE));		
-		facade.displayAvailableRooms();		
+        //Automatically from facade
+        //System.out.println(facade.reserve(RoomType.DOUBLE));
+        //For Customer Choice
+        String selectRoom;
+        selectRoom = JOptionPane.showInputDialog("Enter Room No : ");
+        int num1 = Integer.parseInt(selectRoom);
+        System.out.println(facade.reserve(RoomType.SINGLE, num1));
 
-        Scanner sc = new Scanner(System.in);
-        
+        //System.out.println(facade.reserve(RoomType.DOUBLE));
+        //System.out.println(facade.reserve(RoomType.SINGLE));		
+        facade.displayAvailableRooms();
+
+        //Scanner sc = new Scanner(System.in);
         int i = 0;
         String choice = null;
-        System.out.println("Want some food?");
+        System.out.print("Want some food? [Y/N] : ");
         while (i == 0) {
-            System.out.print("[Y/N] : ");
-            String schoice = sc.nextLine();
-            if ("Y".equals(schoice) || "N".equals(schoice)) {
-                choice = schoice;
+            String wantFood;
+            wantFood = JOptionPane.showInputDialog("Want some food? [Y/N] : ");
+
+            //String schoice = sc.nextLine();
+            if ("Y".equals(wantFood) || "N".equals(wantFood)) {
+                choice = wantFood;
                 i = 1;
             } else {
                 System.out.println("Please try again.");
@@ -100,12 +100,13 @@ public class HotelService {
         if ("Y".equals(choice)) {
 
             i = 0;
-
+            System.out.println("");
             System.out.println("Welcome to the restaurant please select your restaurant type");
-            System.out.println("=> N = NonVegRestaurant V = VegRestaurant B = BothRestaurant");
+            //System.out.println("=> N = NonVegRestaurant V = VegRestaurant B = BothRestaurant");
             while (i == 0) {
-                System.out.print("Enter Restaurant : ");
-                String s = sc.nextLine();
+                String s = JOptionPane.showInputDialog("Welcome to the restaurant please select your restaurant type \n => N = NonVegRestaurant V = VegRestaurant B = BothRestaurant \n Enter Restaurant : ");
+                //System.out.print("Enter Restaurant : ");
+                //String s = sc.nextLine();
                 if ("N".equals(s) || "V".equals(s) || "B".equals(s)) {
                     choice = s;
                     i = 1;
@@ -113,7 +114,7 @@ public class HotelService {
                     System.out.println("Please try again.");
                 }
             }
-            
+
             h.StateFood(choice);
             /*switch (choice) {
                 case "N":
