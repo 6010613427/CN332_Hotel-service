@@ -17,6 +17,6 @@ public class BothRestaurant implements HotelMenu {
     public void getFood(int num, String country) {
         Balance b = new Balance();
         String p = b.textBalance(num, country);
-        System.out.println("Your menu is " + food[num] + " " + p);
+        System.out.println("Your menu is " + food[num - 1] + " " + p);
     }
 }
