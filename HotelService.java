@@ -1,5 +1,8 @@
 
+import com.javaskool.facade.HotelFacade;
+import com.javaskool.model.RoomType;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,26 +17,29 @@ public class HotelService {
 
     public static void main(String[] args) {
 
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Welcome to Hotel-Service: ");
-        System.out.println("Please select number => 1 Japan Hotel, 2 China Hotel, 3 Hongkong Hotel, 4 Bali Hotel, 5 Canada Hotel");
-        System.out.print("Which\'s hotel do you want to booking: ");
-        char country = reader.next().charAt(0);
+//        Scanner reader = new Scanner(System.in);
+        String country;
+        country = JOptionPane.showInputDialog("Welcome to Hotel-Service: \nPlease select number: \n 1. Japan Hotel, \n 2. China Hotel, \n 3. Hongkong Hotel, \n 4. Bali Hotel, \n 5. Canada Hotel \n Which\'s hotel do you want to booking: ");
+//        System.out.println("Welcome to Hotel-Service: ");
+//        System.out.println("Please select number => 1 Japan Hotel, 2 China Hotel, 3 Hongkong Hotel, 4 Bali Hotel, 5 Canada Hotel");
+//        System.out.print("Which\'s hotel do you want to booking: ");
+//        char country = reader.next().charAt(0);
+        String numCountry = country;
         String nameHotel = "";
-        switch (country) {
-            case '1':
+        switch (numCountry) {
+            case "1":
                 nameHotel = "Japan Hotel";
                 break;
-            case '2':
+            case "2":
                 nameHotel = "China";
                 break;
-            case '3':
+            case "3":
                 nameHotel = "Hongkong";
                 break;
-            case '4':
+            case "4":
                 nameHotel = "Bali";
                 break;
-            case '5':
+            case "5":
                 nameHotel = "Canada";
                 break;
             default:
@@ -46,16 +52,34 @@ public class HotelService {
 
         //HotelTarget hotelAdapter = new HotelAdapter(eachhotel);
 //		System.out.println("The Hotel");
-        Scanner customername = new Scanner(System.in);
-        System.out.print("Please fill in your name: ");
-        String name = customername.nextLine();
-        eachhotel.bookName(name);
+//        Scanner customername = new Scanner(System.in);
+        String cname;
+        cname = JOptionPane.showInputDialog("Please fill in your name: ");
+//        System.out.print("Please fill in your name: ");
+//        String name = customername.nextLine();
+        eachhotel.bookName(cname);
         eachhotel.roomleft();
         eachhotel.place(nameHotel);
+        
         System.out.println();
+        HotelFacade facade=new HotelFacade();
+		facade.displayAvailableRooms();
+		
+		//Automatically from facade
+		//System.out.println(facade.reserve(RoomType.DOUBLE));
+
+		//For Customer Choice
+		Scanner room=new Scanner(System.in);
+		System.out.print("Enter Room No :");
+		int numroom=room.nextInt();
+		System.out.println(facade.reserve(RoomType.SINGLE,numroom));
+		
+		//System.out.println(facade.reserve(RoomType.DOUBLE));
+		//System.out.println(facade.reserve(RoomType.SINGLE));		
+		facade.displayAvailableRooms();		
 
         Scanner sc = new Scanner(System.in);
-
+        
         int i = 0;
         String choice = null;
         System.out.println("Want some food?");
