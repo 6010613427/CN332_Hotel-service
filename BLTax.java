@@ -5,7 +5,7 @@ public class BLTax {
     
     public String getBLTax(double x) {
         
-        String s = Double.toString(x / currency);
+        String s = String.format("%.2f", (x / currency));
         
         result = s + " IDR";
 

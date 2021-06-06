@@ -5,7 +5,7 @@ public class CATax {
     
     public String getCATax(double x) {
         
-        String s = Double.toString(x / currency);
+        String s = String.format("%.2f", (x / currency));
         
         result = s + " CAD";
 

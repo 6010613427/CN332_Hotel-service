@@ -5,7 +5,7 @@ public class HKTax {
     
     public String getHKTax(double x) {
         
-        String s = Double.toString(x / currency);
+        String s = String.format("%.2f", (x / currency));
         
         result = s + " HKD";
 
