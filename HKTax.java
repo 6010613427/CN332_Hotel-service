@@ -4,8 +4,8 @@ public class HKTax {
     private final double currency = 4;
     
     public String getHKTax(double x) {
-        
-        String s = String.format("%.2f", (x / currency));
+        final double HKhotel = 3000;
+        String s = String.format("%.2f",(x+HKhotel) * currency);
         
         result = s + " HKD";
 

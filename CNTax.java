@@ -4,8 +4,8 @@ public class CNTax {
     private final double currency = 4.83;
             
     public String getCNTax(double x) {
-        
-        String s = String.format("%.2f", (x / currency));
+        final double cnHotel = 4500;
+        String s = String.format("%.2f",(x+cnHotel) * currency);
         
         result = s + " CNY";
 

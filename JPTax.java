@@ -4,8 +4,8 @@ public class JPTax {
     private final double currency = 0.29;
     
     public String getJPTax(double x) {
-        
-        String s = String.format("%.2f", (x / currency));
+        final double jpHotel = 3500; 
+        String s = String.format("%.2f",(x + jpHotel) * currency );
         
         result = s + " JPY";
 
