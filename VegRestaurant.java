@@ -1,4 +1,3 @@
-
 public class VegRestaurant implements HotelMenu {
 
     private final String[] food = {"Paneer Makhani Biryani", "Salad", "Gobhi Aloo", "Matar Paneer Lababdaar"};
@@ -17,7 +16,7 @@ public class VegRestaurant implements HotelMenu {
     public void getFood(int num, String country) {
         Balance b = new Balance();
         String p = b.textBalance(num, country);
-        System.out.println("Your menu is " + food[num - 1] + " " + p);
+        System.out.println("Your menu is " + food[num - 1] + " and total price (Hotel and food)" + " is " + p);
     }
 
 }
